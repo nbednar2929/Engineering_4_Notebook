@@ -56,7 +56,7 @@ Your readme will have various images and gifs on it. Upload a test image and tes
 
 ### Test Link
 
-[Hyperlink Text](https://www.turtle.com)      
+[Hyperlink text](http://www.turtle.com)        
 
 ### Test Image
 
