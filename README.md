@@ -21,7 +21,7 @@ There was no wiring for this assignment.
 
 ### Code
 
-```
+``` python
 import time
 import board # type: ignore
 import digitalio # type: ignore
