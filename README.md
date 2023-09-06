@@ -27,7 +27,7 @@ What went wrong / was challenging, how'd you figure it out, and what did you lea
 
 &nbsp;
 
-___
+# Templates
 
 &nbsp;
 
