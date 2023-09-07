@@ -21,8 +21,6 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/f7809c44-0
 There was no wiring for this assignment.
 
 ### Code
-
-<details>
     
 <p>
     
@@ -38,8 +36,6 @@ print("Liftoff") #print liftoff at the end of the countdown
 ```
 
 </p>
-
-</details>
 
 ### Reflection
 
