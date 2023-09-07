@@ -14,15 +14,7 @@ We were instructed to print a countdown from 10 to 0 to our serial monitor and t
 
 ### Evidence 
 
-<details>
-
-<p>
-    
 https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/f7809c44-0927-4fc5-9968-a9e7f983bd40
-    
-</p>
-
-</details>
     
 ### Wiring
 
@@ -30,6 +22,10 @@ There was no wiring for this assignment.
 
 ### Code
 
+<details>
+    
+<p>
+    
 ``` python
 import time
 import board # type: ignore
@@ -40,6 +36,10 @@ for i in range (10,0,-1): #for loop from 10 to 0 counting by 1
     time.sleep(1) # 1 second delay
 print("Liftoff") #print liftoff at the end of the countdown
 ```
+
+</p>
+
+</details>
 
 ### Reflection
 
@@ -70,6 +70,10 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6
 
 ### Code
 
+<details>
+    
+<p>
+    
 ```python
 #type: ignore
 import time
@@ -90,7 +94,11 @@ for i in range (10,0,-1): #for loop from 10 to 0 counting by 1
 print("Liftoff") #print liftoff at the end of the countdown
 Green.value = True #turn on green led for 5 seconds
 time.sleep(5)
-``` 
+```
+
+</p>
+
+</details>
 
 ### Reflection
 
