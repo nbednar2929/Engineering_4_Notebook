@@ -48,7 +48,16 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6
 
 ### Wiring
 
+<details>
+<summary><b>Wiring Diagram<b></summary>
+
+<p>
+    
 ![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/4a036ae6-1d7f-41da-936f-1d9d720063ad)
+
+</p>
+
+</details>
 
 ### Code
 
