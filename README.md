@@ -4,6 +4,7 @@
 
 ## Table of Contents
 * [Launch Pad Part 1](#launch_pad_part_1)
+* [Launch Pad Part 2](#launch_pad_part_2)
 * [Raspberry_Pi_Assignment_Template](#raspberry_pi_assignment_template)
 * [Onshape_Assignment_Template](#onshape_assignment_template)
 
@@ -13,8 +14,16 @@ We were instructed to print a countdown from 10 to 0 to our serial monitor and t
 
 ### Evidence 
 
-https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/f7809c44-0927-4fc5-9968-a9e7f983bd40
+<details>
 
+<p>
+    
+https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/f7809c44-0927-4fc5-9968-a9e7f983bd40
+    
+</p>
+
+</details>
+    
 ### Wiring
 
 There was no wiring for this assignment.
