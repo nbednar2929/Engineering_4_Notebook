@@ -3,7 +3,8 @@
 &nbsp;
 
 ## Table of Contents
-* [Launch Pad Part 1](#launch_pad_part_1)
+* [Launch Pad Part 1](#Launch_Pad_Part_1)
+* [Launch Pad Part 2](#Launch_Pad_Part_2)
 * [Raspberry_Pi_Assignment_Template](#raspberry_pi_assignment_template)
 * [Onshape_Assignment_Template](#onshape_assignment_template)
 
@@ -14,7 +15,7 @@ We were instructed to print a countdown from 10 to 0 to our serial monitor and t
 ### Evidence 
 
 https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/f7809c44-0927-4fc5-9968-a9e7f983bd40
-
+    
 ### Wiring
 
 There was no wiring for this assignment.
@@ -35,6 +36,58 @@ print("Liftoff") #print liftoff at the end of the countdown
 ### Reflection
 
 This was a fairly basic assignment to get us back into the swing of things. I originally took a more convoluted approach to this assignment creating a "countdown" variable which wasn't nearly as concise as my final product after a bit of inspiration from my peers.
+
+## Launch Pad Part 2
+
+### Assignment Description
+
+Wire two LEDs, a red one to blink every second and a green one to turn on when you have liftoff.
+
+### Evidence 
+
+https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6922-4650-96eb-75fd628076b5
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/4a036ae6-1d7f-41da-936f-1d9d720063ad)
+
+</p>
+
+</details>
+
+### Code
+
+```python
+#type: ignore
+import time
+import board 
+import digitalio 
+
+Red = digitalio.DigitalInOut(board.GP1) #initialize red led 
+Red.direction = digitalio.Direction.OUTPUT
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+for i in range (10,0,-1): #for loop from 10 to 0 counting by 1
+    print(i) #prints counter
+    Red.value = True #turn red led on
+    time.sleep(.2)
+    Red.value = False #turn red led off
+    time.sleep(.8) # 1 second delay    
+print("Liftoff") #print liftoff at the end of the countdown
+Green.value = True #turn on green led for 5 seconds
+time.sleep(5)
+```
+
+### Reflection
+
+This assignment was also pretty easy since we were just building off of part 1. All I had to do was initialize two LEDs and turn on the Red LED in the "for loop". The one difficult part was realizing I needed to add a sleep after turning on the Green LED or else it would instantly reset and never turn on.
+
 
 &nbsp;
 
