@@ -49,7 +49,7 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6
 ### Wiring
 
 <details>
-<summary><b>Wiring Diagram<b></summary>
+<summary><b>Wiring Diagram</b>b></summary>
 
 <p>
     
