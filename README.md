@@ -63,7 +63,7 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6
 
 ### Code
 
-```python
+``` python
 #type: ignore
 import time
 import board 
