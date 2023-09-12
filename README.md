@@ -55,7 +55,7 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6
 
 <p>
     
-![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/4a036ae6-1d7f-41da-936f-1d9d720063ad)
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/b624ef84-7c64-48a6-894d-d1bc0a5c1d06)
 
 </p>
 
@@ -101,7 +101,16 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/5c82c4e8-0
 
 ### Wiring
 
-This may not be applicable to all assignments. Anything where you wire something up, include the wiring diagram here. The diagram should be clear enough that I can recreate the wiring from scratch. 
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/1e3ac88f-f9a6-4b44-abc9-07711da24344)
+
+</p>
+
+</details>
 
 ### Code
 
