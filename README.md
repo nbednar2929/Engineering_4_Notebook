@@ -114,7 +114,8 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/5c82c4e8-0
 
 ### Code
 
- ```pyhton
+ ``` pyhton
+
 #type: ignore
 import time
 import board 
@@ -141,6 +142,7 @@ for i in range (10,0,-1): #for loop from 10 to 0 counting by 1
 print("Liftoff") #print liftoff at the end of the countdown
 Green.value = True #turn on green led for 5 seconds
 time.sleep(5)
+
 ```
 
 ### Reflection
