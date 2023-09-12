@@ -5,6 +5,7 @@
 ## Table of Contents
 * [Launch Pad Part 1](#Launch_Pad_Part_1)
 * [Launch Pad Part 2](#Launch_Pad_Part_2)
+* [Launch Pad Part 3](#Launch_Pad_Part_3)
 * [Raspberry_Pi_Assignment_Template](#raspberry_pi_assignment_template)
 * [Onshape_Assignment_Template](#onshape_assignment_template)
 
@@ -135,7 +136,7 @@ time.sleep(5)
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+For some reason pulling my button up didn't work so I had to do a bit of guess and check with rewiring my button and messing with my while loop until eventually everything alligned and the button started the countdown. I struggled to understand the difference between pulling it up and down, but thankfully I asked a friend who explained it to me.
 
 &nbsp;
 
