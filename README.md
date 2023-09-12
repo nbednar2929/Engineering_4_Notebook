@@ -88,6 +88,54 @@ time.sleep(5)
 
 This assignment was also pretty easy since we were just building off of part 1. All I had to do was initialize two LEDs and turn on the Red LED in the "for loop". The one difficult part was realizing I needed to add a sleep after turning on the Green LED or else it would instantly reset and never turn on.
 
+## Launch Pad Part 3
+
+### Assignment Description
+
+Wire a button that when pressed starts the 10 second count down.
+
+### Evidence 
+
+https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/5c82c4e8-0767-460a-b7c3-e7e141390442
+
+### Wiring
+
+This may not be applicable to all assignments. Anything where you wire something up, include the wiring diagram here. The diagram should be clear enough that I can recreate the wiring from scratch. 
+
+### Code
+
+ ```pyhton
+#type: ignore
+import time
+import board 
+import digitalio 
+
+Red = digitalio.DigitalInOut(board.GP1) #initialize red led 
+Red.direction = digitalio.Direction.OUTPUT
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+button = digitalio.DigitalInOut(board.GP28) #initialize button
+button.pull = digitalio.Pull.DOWN #pull button down
+button.direction = digitalio.Direction.INPUT
+
+while button.value == False: #when button is pressed
+    time.sleep(0.3)
+
+for i in range (10,0,-1): #for loop from 10 to 0 counting by 1
+    print(i) #prints counter
+    Red.value = True #turn red led on
+    time.sleep(.2)
+    Red.value = False #turn red led off
+    time.sleep(.8) # 1 second delay    
+print("Liftoff") #print liftoff at the end of the countdown
+Green.value = True #turn on green led for 5 seconds
+time.sleep(5)
+```
+
+### Reflection
+
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
 
 &nbsp;
 
