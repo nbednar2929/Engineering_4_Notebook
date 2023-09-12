@@ -5,6 +5,7 @@
 ## Table of Contents
 * [Launch Pad Part 1](#Launch_Pad_Part_1)
 * [Launch Pad Part 2](#Launch_Pad_Part_2)
+* [Launch Pad Part 3](#Launch_Pad_Part_3)
 * [Raspberry_Pi_Assignment_Template](#raspberry_pi_assignment_template)
 * [Onshape_Assignment_Template](#onshape_assignment_template)
 
@@ -54,7 +55,7 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6
 
 <p>
     
-![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/4a036ae6-1d7f-41da-936f-1d9d720063ad)
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/b624ef84-7c64-48a6-894d-d1bc0a5c1d06)
 
 </p>
 
@@ -62,7 +63,7 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8bce27e9-6
 
 ### Code
 
-```python
+``` python
 #type: ignore
 import time
 import board 
@@ -88,6 +89,65 @@ time.sleep(5)
 
 This assignment was also pretty easy since we were just building off of part 1. All I had to do was initialize two LEDs and turn on the Red LED in the "for loop". The one difficult part was realizing I needed to add a sleep after turning on the Green LED or else it would instantly reset and never turn on.
 
+## Launch Pad Part 3
+
+### Assignment Description
+
+Wire a button that when pressed starts the 10 second count down.
+
+### Evidence 
+
+https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/5c82c4e8-0767-460a-b7c3-e7e141390442
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/1e3ac88f-f9a6-4b44-abc9-07711da24344)
+
+</p>
+
+</details>
+
+### Code
+
+ ``` pyhton
+
+#type: ignore
+import time
+import board 
+import digitalio 
+
+Red = digitalio.DigitalInOut(board.GP1) #initialize red led 
+Red.direction = digitalio.Direction.OUTPUT
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+button = digitalio.DigitalInOut(board.GP28) #initialize button
+button.pull = digitalio.Pull.DOWN #pull button down
+button.direction = digitalio.Direction.INPUT
+
+while button.value == False: #when button is pressed
+    time.sleep(0.3)
+
+for i in range (10,0,-1): #for loop from 10 to 0 counting by 1
+    print(i) #prints counter
+    Red.value = True #turn red led on
+    time.sleep(.2)
+    Red.value = False #turn red led off
+    time.sleep(.8) # 1 second delay    
+print("Liftoff") #print liftoff at the end of the countdown
+Green.value = True #turn on green led for 5 seconds
+time.sleep(5)
+
+```
+
+### Reflection
+
+For some reason pulling my button up didn't work so I had to do a bit of guess and check with rewiring my button and messing with my while loop until eventually everything alligned and the button started the countdown. I struggled to understand the difference between pulling it up and down, but thankfully I asked a friend who explained it to me.
 
 &nbsp;
 
