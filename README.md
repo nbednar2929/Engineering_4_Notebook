@@ -156,7 +156,7 @@ At liftoff make a 180 degree servo spin 180 degrees.
 
 ### Evidence 
 
-
+![ezgif com-optimize (1)](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/8a83edca-7464-4fff-b2c2-8c705d230505)
 
 ### Wiring
 
