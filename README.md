@@ -6,6 +6,7 @@
 * [Launch Pad Part 1](#Launch_Pad_Part_1)
 * [Launch Pad Part 2](#Launch_Pad_Part_2)
 * [Launch Pad Part 3](#Launch_Pad_Part_3)
+* [Launch Pad Part 4](#Launch_Pad_Part_4)
 * [Raspberry_Pi_Assignment_Template](#raspberry_pi_assignment_template)
 * [Onshape_Assignment_Template](#onshape_assignment_template)
 
@@ -148,6 +149,74 @@ time.sleep(5)
 ### Reflection
 
 For some reason pulling my button up didn't work so I had to do a bit of guess and check with rewiring my button and messing with my while loop until eventually everything alligned and the button started the countdown. I struggled to understand the difference between pulling it up and down, but thankfully I asked a friend who explained it to me.
+
+## Launch Pad Part 4
+
+### Assignment Description
+
+At liftoff make a 180 degree servo spin 180 degrees.
+
+### Evidence 
+
+
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/4a335aaf-2bcd-4c23-8099-ff090f3fac06)
+
+</p>
+
+</details>
+
+### Code
+
+``` python
+#type: ignore
+import time
+import board 
+import digitalio 
+import pwmio
+from adafruit_motor import servo
+from digitalio import DigitalInOut,Direction,Pull
+
+pwm = pwmio.PWMOut(board.GP2, duty_cycle=2 ** 15, frequency=50)
+my_servo = servo.Servo(pwm, min_pulse=500, max_pulse=2500)
+
+Red = digitalio.DigitalInOut(board.GP1) #initialize red led 
+Red.direction = digitalio.Direction.OUTPUT
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+button = digitalio.DigitalInOut(board.GP28) #initialize button
+button.pull = digitalio.Pull.DOWN #pull button down
+button.direction = digitalio.Direction.INPUT
+
+while button.value == False: #when button is pressed
+    time.sleep(0.3)
+
+for i in range (10,0,-1): #for loop from 10 to 0 counting by 1
+    print(i) #prints counter
+    Red.value = True #turn red led on
+    time.sleep(.2)
+    Red.value = False #turn red led off
+    time.sleep(.8) # 1 second delay    
+print("Liftoff") #print liftoff at the end of the countdown
+for angle in range(0, 185, 5):  # 0 - 180 degrees, 5 degrees at a time forward.
+    my_servo.angle = angle
+    print(angle)
+    time.sleep(0.05)
+Green.value = True #turn on green led for 5 seconds
+time.sleep(5)
+```
+
+### Reflection
+
+This assignment was super duper simple! With my bud Afton by my side I can achieve anything! I used my engineering notebook from last year and took the code from that to get my servo to move. I also found out how to wire the servo using last years engineering notebook.
 
 &nbsp;
 
