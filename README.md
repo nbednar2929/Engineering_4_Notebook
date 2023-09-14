@@ -115,7 +115,7 @@ https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/5c82c4e8-0
 
 ### Code
 
- ```pyhton
+```python
 #type: ignore
 import time
 import board 
