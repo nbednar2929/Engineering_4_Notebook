@@ -18,4 +18,6 @@ while True:
     print("X Acceleration: " + (str(mpu.acceleration[0])))
     print("Y Acceleration: " + (str(mpu.acceleration[1])))
     print("Z Acceleration: " + (str(mpu.acceleration[2])))    
-    time.sleep(0.2)
+    print("Rotation: " + (str(mpu.gyro)))
+    print("")
+    time.sleep(1)
