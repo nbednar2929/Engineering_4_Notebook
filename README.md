@@ -7,7 +7,7 @@
 * [Launch Pad Part 2](#Launch_Pad_Part_2)
 * [Launch Pad Part 3](#Launch_Pad_Part_3)
 * [Launch Pad Part 4](#Launch_Pad_Part_4)
-* [Crash Avoidance Part 1](#Crash_Avoidance_Part_1)
+* [Crash Avoidance Part 1](#crash_avoidance_part_1)
 * [Raspberry_Pi_Assignment_Template](#raspberry_pi_assignment_template)
 * [Onshape_Assignment_Template](#onshape_assignment_template)
 
