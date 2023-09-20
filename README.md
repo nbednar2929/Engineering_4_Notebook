@@ -3,10 +3,10 @@
 &nbsp;
 
 ## Table of Contents
-* [Launch Pad Part 1](#launch_pad_part_1)
-* [Launch Pad Part 2](#launch_pad_part_2)
-* [Launch Pad Part 3](#launch_pad_part_3)
-* [Launch Pad Part 4](#launch_pad_part_4)
+* [Launch Pad Part 1](#launch-pad-part-1)
+* [Launch Pad Part 2](#launch-pad-part-2)
+* [Launch Pad Part 3](#launch-pad-part-3)
+* [Launch Pad Part 4](#launch-pad-part-4)
 * [Crash Avoidance Part 1](#crash_avoidance_part_1)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
