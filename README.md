@@ -3,12 +3,14 @@
 &nbsp;
 
 ## Table of Contents
-* [Launch Pad Part 1](#Launch_Pad_Part_1)
-* [Launch Pad Part 2](#Launch_Pad_Part_2)
-* [Launch Pad Part 3](#Launch_Pad_Part_3)
-* [Launch Pad Part 4](#Launch_Pad_Part_4)
-* [Raspberry_Pi_Assignment_Template](#raspberry_pi_assignment_template)
-* [Onshape_Assignment_Template](#onshape_assignment_template)
+* [Launch Pad Part 1](#launch-pad-part-1)
+* [Launch Pad Part 2](#launch-pad-part-2)
+* [Launch Pad Part 3](#launch-pad-part-3)
+* [Launch Pad Part 4](#launch-pad-part-4)
+* [Crash Avoidance Part 1](#crash-avoidance-part-1)
+* [Crash Avoidance Part 2](#crash-avoidance-part-2)
+* [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
+* [Onshape Assignment Template](#onshape_assignment_template)
 
 ### Launch Pad Part 1
 
@@ -216,6 +218,126 @@ time.sleep(5)
 
 This assignment was super duper simple! With my bud Afton by my side I can achieve anything! I used my engineering notebook from last year and took the code from that to get my servo to move. I also found out how to wire the servo using last years engineering notebook.
 
+## Crash Avoidance Part 1
+
+### Assignment Description
+
+Wire up an accelerometer that returns acceleration values for the x, y, and z axes to the serial monitor.
+
+### Evidence 
+
+![Crash Avoidance Part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/6ffde8d8-b556-49e2-ad34-ca152541addb)
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/773750be-81d1-4f58-879c-50e8f393dc61)
+
+</p>
+
+</details>
+
+### Code
+
+```python
+#type: ignore
+import time #imports 
+import board 
+import digitalio 
+import pwmio
+from adafruit_motor import servo
+from digitalio import DigitalInOut,Direction,Pull
+import adafruit_mpu6050
+import busio
+
+sda_pin = board.GP14 #wiring up accelerometer
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+mpu = adafruit_mpu6050.MPU6050(i2c) #initializing MPU
+
+#printing acceleration values
+while True: 
+    print("X Acceleration: " + (str(mpu.acceleration[0])))
+    print("Y Acceleration: " + (str(mpu.acceleration[1])))
+    print("Z Acceleration: " + (str(mpu.acceleration[2])))    
+    print("Rotation: " + (str(mpu.gyro)))
+    print("")
+    time.sleep(1)
+```
+
+### Reflection
+
+This assignment was pretty easy after I just read the assingment, Mr.Miller doesn't give us instructions for fun after all. Once I realized that reading the assignment pretty much gave step by step instructions the assignment practicly did itself.
+
+## Crash Avoidance Part 2
+
+### Assignment Description
+
+Use acceleration values to trigger a warning light if the pico is tilted 90 degrees and set up your RPi Pico to run “headless” (not attached to a computer).
+
+### Evidence 
+
+![ezgif com-crop (1)](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/611d9102-8312-4090-b4be-dcc41a3fd7a4)
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/e271fb45-fc40-47b2-a57b-e41226dfc5ca)
+
+</p>
+
+</details>
+
+### Code
+
+```python
+#type: ignore
+#imports
+import time
+import board 
+import digitalio 
+import pwmio
+from digitalio import DigitalInOut,Direction,Pull
+import adafruit_mpu6050
+import busio
+
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+sda_pin = board.GP14 #wiring up accelerometer
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+mpu = adafruit_mpu6050.MPU6050(i2c) #initializing MPU
+
+#printing acceleration values
+while True: 
+    print("X Acceleration: " + (str(mpu.acceleration[0])))
+    print("Y Acceleration: " + (str(mpu.acceleration[1])))
+    print("Z Acceleration: " + (str(mpu.acceleration[2])))    
+    print("Rotation: " + (str(mpu.gyro)))
+    print("")
+    time.sleep(1)
+    if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9: #if gravity affects tilt 
+        Green.value = True #led on
+    elif mpu.acceleration[0] <= -9 or mpu.acceleration[1] <= -9: #if gravity tilt other way
+            Green.value = True
+    else: Green.value = False #else led false
+```
+
+### Reflection
+
+This assignment again was pretty simple. Following what the assignment said and talking with my peers made this super smoothe sailing. The hardest part of this by far is unplugging the battery, that thing does not want to leave its cozy lil plug hole.
+
 &nbsp;
 
 # Templates
@@ -237,6 +359,7 @@ Pictures / Gifs of your work should go here. You need to communicate what your t
 This may not be applicable to all assignments. Anything where you wire something up, include the wiring diagram here. The diagram should be clear enough that I can recreate the wiring from scratch. 
 
 ### Code
+
 Give me a link to your code. [Something like this](https://github.com/millerm22/Engineering_4_Notebook/blob/main/Raspberry_Pi/hello_world.py). Don't make me hunt through your folders, give me a nice link to click to take me there! Remember to **COMMENT YOUR CODE** if you want full credit. 
 
 ### Reflection
