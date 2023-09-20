@@ -225,7 +225,7 @@ Wire up an accelerometer that returns acceleration values for the x, y, and z ax
 
 ### Evidence 
 
-Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+![Crash Avoidance Part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/6ffde8d8-b556-49e2-ad34-ca152541addb)
 
 ### Wiring
 
