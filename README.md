@@ -216,6 +216,62 @@ time.sleep(5)
 
 This assignment was super duper simple! With my bud Afton by my side I can achieve anything! I used my engineering notebook from last year and took the code from that to get my servo to move. I also found out how to wire the servo using last years engineering notebook.
 
+## Crash Avoidance Part 1
+
+### Assignment Description
+
+Wire up an accelerometer that returns acceleration values for the x, y, and z axes to the serial monitor.
+
+### Evidence 
+
+Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/773750be-81d1-4f58-879c-50e8f393dc61)
+
+</p>
+
+</details>
+
+### Code
+
+```python
+#type: ignore
+import time #imports 
+import board 
+import digitalio 
+import pwmio
+from adafruit_motor import servo
+from digitalio import DigitalInOut,Direction,Pull
+import adafruit_mpu6050
+import busio
+
+sda_pin = board.GP14 #wiring up accelerometer
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+mpu = adafruit_mpu6050.MPU6050(i2c) #initializing MPU
+
+#printing acceleration values
+while True: 
+    print("X Acceleration: " + (str(mpu.acceleration[0])))
+    print("Y Acceleration: " + (str(mpu.acceleration[1])))
+    print("Z Acceleration: " + (str(mpu.acceleration[2])))    
+    print("Rotation: " + (str(mpu.gyro)))
+    print("")
+    time.sleep(1)
+```
+
+### Reflection
+
+This assignment was pretty easy after I just read the assingment, Mr.Miller doesn't give us instructions for fun after all. Once I realized that reading the assignment pretty much gave step by step instructions the assignment practicly did itself.
+
 &nbsp;
 
 # Templates
