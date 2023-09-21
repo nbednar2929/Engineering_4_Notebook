@@ -272,7 +272,7 @@ while True:
 
 ### Reflection
 
-This assignment was pretty easy after I just read the assingment, Mr.Miller doesn't give us instructions for fun after all. Once I realized that reading the assignment pretty much gave step by step instructions the assignment practicly did itself.
+My only issues with this assignment was my serial monitor. I kept getting error messages when I had the line "print("X Acceleration:" + mpu.acceleration[0])". To fix this I added str infront of my acceleration value and put it in parenthesis. After that I had no more error messages and it printed how I wanted it to. So when you have text and a value to print you need to add "str" infront of your value for it to work.
 
 ## Crash Avoidance Part 2
 
