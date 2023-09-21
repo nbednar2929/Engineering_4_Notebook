@@ -216,7 +216,7 @@ time.sleep(5)
 
 ### Reflection
 
-This assignment was super duper simple! With my bud Afton by my side I can achieve anything! I used my engineering notebook from last year and took the code from that to get my servo to move. I also found out how to wire the servo using last years engineering notebook.
+For this assignment I had to use a "for" loop which is something I've struggled with in the past. I had to lower the range of the for loop from 10-1 to 10-0 in order to get the loop to count down to 1 rather than 2 since for loops don't count the minimum of the range. I also multiple times had messed up which direction to put my LEDs into my breadboard. I had to realize that the LED has a flat edge around the outside. The wire that comes out of that flat edge connects to a negative pin.
 
 ## Crash Avoidance Part 1
 
