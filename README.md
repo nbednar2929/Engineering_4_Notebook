@@ -336,7 +336,7 @@ while True:
 
 ### Reflection
 
-This assignment again was pretty simple. Following what the assignment said and talking with my peers made this super smoothe sailing. The hardest part of this by far is unplugging the battery, that thing does not want to leave its cozy lil plug hole.
+In my original code I only had the if statement "if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9:". Because of that if I tilted my breadboard one way the light would turn on, but if I turned it the other way the acceleration value would actually be negative and so the light wouldn't turn on. To fix this I had to add a second line which turned the led on if the value was less than -9. From now on I know to understand negative acceleration and to account for it when writing code.
 
 &nbsp;
 
