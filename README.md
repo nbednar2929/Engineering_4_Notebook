@@ -9,6 +9,7 @@
 * [Launch Pad Part 4](#launch-pad-part-4)
 * [Crash Avoidance Part 1](#crash-avoidance-part-1)
 * [Crash Avoidance Part 2](#crash-avoidance-part-2)
+* [Crash Avoidance Part 3](#crash-avoidance-part-3)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -272,7 +273,7 @@ while True:
 
 ### Reflection
 
-This assignment was pretty easy after I just read the assingment, Mr.Miller doesn't give us instructions for fun after all. Once I realized that reading the assignment pretty much gave step by step instructions the assignment practicly did itself.
+My only issues with this assignment was my serial monitor. I kept getting error messages when I had the line "print("X Acceleration:" + mpu.acceleration[0])". To fix this I added str infront of my acceleration value and put it in parenthesis. After that I had no more error messages and it printed how I wanted it to. So when you have text and a value to print you need to add "str" infront of your value for it to work.
 
 ## Crash Avoidance Part 2
 
@@ -336,7 +337,87 @@ while True:
 
 ### Reflection
 
-This assignment again was pretty simple. Following what the assignment said and talking with my peers made this super smoothe sailing. The hardest part of this by far is unplugging the battery, that thing does not want to leave its cozy lil plug hole.
+In my original code I only had the if statement "if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9:". Because of that if I tilted my breadboard one way the light would turn on, but if I turned it the other way the acceleration value would actually be negative and so the light wouldn't turn on. To fix this I had to add a second line which turned the led on if the value was less than -9. From now on I know to understand negative acceleration and to account for it when writing code.
+
+## Crash Avoidance Part 3
+
+### Assignment Description
+
+Add an onboard OLED screen to print live angular velocity values.
+
+### Evidence 
+
+Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/e8f752da-b980-43a0-86c0-4e68a2858f71)
+
+</p>
+
+</details>
+
+### Code
+
+```python
+#type: ignore
+#imports
+import time
+import board 
+import digitalio 
+import pwmio
+from digitalio import DigitalInOut,Direction,Pull
+import adafruit_mpu6050
+import busio
+from adafruit_display_text import label
+import adafruit_displayio_ssd1306
+import terminalio
+import displayio
+
+displayio.release_displays() #splits SCL SDA displays
+
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+sda_pin = board.GP14 #wiring up accelerometer
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+display_bus = displayio.I2CDisplay(i2c, device_address=0x3d, reset=board.GP13) #identifies monitor
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+mpu = adafruit_mpu6050.MPU6050(i2c, address=0x68)
+
+#printing acceleration values
+while True: 
+
+    splash = displayio.Group() #displays and defines text
+    title = f"ANGULAR VELOCITY: \n X:{str(round(mpu.gyro[0],3))} \n Y:{str(round(mpu.gyro[1],3))} \n Z:{str(round(mpu.gyro[2],3))}"
+    text_area = label.Label(terminalio.FONT, text=title,color=0xFFFF00, x=5, y=5 )
+    splash.append(text_area)
+    display.show(splash)
+
+    #print("X Acceleration: " + (str(mpu.acceleration[0])))
+    #print("Y Acceleration: " + (str(mpu.acceleration[1])))
+    #print("Z Acceleration: " + (str(mpu.acceleration[2])))    
+    #print("Rotation: " + (str(mpu.gyro)))
+    #print("")
+    time.sleep(.1)
+
+    if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9: #if gravity affects tilt 
+        Green.value = True #led on
+    elif mpu.acceleration[0] <= -9 or mpu.acceleration[1] <= -9: #if gravity tilt other way
+            Green.value = True
+    else: Green.value = False #else led false
+```
+
+### Reflection
+
+I had two main issues with this assignment. The first is that I originally didn't have the line "displayio.release_displays()" at the top of my code right below my imports. As a result my OLED display couldn't be idenitified and wouldn't print my angular velocity. To fix this all I did was move that line to right below my imports. The second issue I had was with my syntax when printing on the OLED display. I tried to use my usual priting with strings and plus signs, but because of that all of my code was on one line and went off the screen of the OLED. To fix this I created an f string which I printed to my OLED display. I used "\n" to put my value on new lines, and seperated my values using "mpu.gyro[x]", x being either 0, 1, or 2. I also had to learn how to round the values by surrounding my values with parenthesis, on the left side of my values I wrote "round" and on the right side I put a comma and then the number of digits I'd like to round to. Once I added all of my newfound "f string" knowledge my value displayed wonderfully. (I can do whatever I can dream!)
 
 &nbsp;
 
