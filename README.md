@@ -417,7 +417,7 @@ while True:
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+I had two main issues with this assignment. The first is that I originally didn't have the line "displayio.release_displays()" at the top of my code right below my imports. As a result my OLED display couldn't be idenitified and wouldn't print my angular velocity. To fix this all I did was move that line to right below my imports. The second issue I had was with my syntax when printing on the OLED display. I tried to use my usual priting with strings and plus signs, but because of that all of my code was on one line and went off the screen of the OLED. To fix this I created an f string which I printed to my OLED display. I used "\n" to put my value on new lines, and seperated my values using "mpu.gyro[x]", x being either 0, 1, or 2. I also had to learn how to round the values by surrounding my values with parenthesis, on the left side of my values I wrote "round" and on the right side I put a comma and then the number of digits I'd like to round to. Once I added all of my newfound "f string" knowledge my value displayed wonderfully. (I can do whatever I can dream!)
 
 &nbsp;
 
