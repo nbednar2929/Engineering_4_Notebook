@@ -338,6 +338,86 @@ while True:
 
 In my original code I only had the if statement "if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9:". Because of that if I tilted my breadboard one way the light would turn on, but if I turned it the other way the acceleration value would actually be negative and so the light wouldn't turn on. To fix this I had to add a second line which turned the led on if the value was less than -9. From now on I know to understand negative acceleration and to account for it when writing code.
 
+## Crash Avoidance Part 3
+
+### Assignment Description
+
+Add an onboard OLED screen to print live angular velocity values.
+
+### Evidence 
+
+Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/e8f752da-b980-43a0-86c0-4e68a2858f71)
+
+</p>
+
+</details>
+
+### Code
+
+```python
+#type: ignore
+#imports
+import time
+import board 
+import digitalio 
+import pwmio
+from digitalio import DigitalInOut,Direction,Pull
+import adafruit_mpu6050
+import busio
+from adafruit_display_text import label
+import adafruit_displayio_ssd1306
+import terminalio
+import displayio
+
+displayio.release_displays() #splits SCL SDA displays
+
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+sda_pin = board.GP14 #wiring up accelerometer
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+display_bus = displayio.I2CDisplay(i2c, device_address=0x3d, reset=board.GP13) #identifies monitor
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+mpu = adafruit_mpu6050.MPU6050(i2c, address=0x68)
+
+#printing acceleration values
+while True: 
+
+    splash = displayio.Group() #displays and defines text
+    title = f"ANGULAR VELOCITY: \n X:{str(round(mpu.gyro[0],3))} \n Y:{str(round(mpu.gyro[1],3))} \n Z:{str(round(mpu.gyro[2],3))}"
+    text_area = label.Label(terminalio.FONT, text=title,color=0xFFFF00, x=5, y=5 )
+    splash.append(text_area)
+    display.show(splash)
+
+    #print("X Acceleration: " + (str(mpu.acceleration[0])))
+    #print("Y Acceleration: " + (str(mpu.acceleration[1])))
+    #print("Z Acceleration: " + (str(mpu.acceleration[2])))    
+    #print("Rotation: " + (str(mpu.gyro)))
+    #print("")
+    time.sleep(.1)
+
+    if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9: #if gravity affects tilt 
+        Green.value = True #led on
+    elif mpu.acceleration[0] <= -9 or mpu.acceleration[1] <= -9: #if gravity tilt other way
+            Green.value = True
+    else: Green.value = False #else led false
+```
+
+### Reflection
+
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+
 &nbsp;
 
 # Templates
