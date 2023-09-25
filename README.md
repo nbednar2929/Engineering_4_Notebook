@@ -347,7 +347,7 @@ Add an onboard OLED screen to print live angular velocity values.
 
 ### Evidence 
 
-Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/9b9da6a6-fdb4-4143-b6ae-a5a5752a2791
 
 ### Wiring
 
