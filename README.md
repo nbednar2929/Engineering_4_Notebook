@@ -10,6 +10,7 @@
 * [Crash Avoidance Part 1](#crash-avoidance-part-1)
 * [Crash Avoidance Part 2](#crash-avoidance-part-2)
 * [Crash Avoidance Part 3](#crash-avoidance-part-3)
+* [FEA Beam Part 1](#FEA-Beam-Part-1)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -418,6 +419,24 @@ while True:
 ### Reflection
 
 I had two main issues with this assignment. The first is that I originally didn't have the line "displayio.release_displays()" at the top of my code right below my imports. As a result my OLED display couldn't be idenitified and wouldn't print my angular velocity. To fix this all I did was move that line to right below my imports. The second issue I had was with my syntax when printing on the OLED display. I tried to use my usual priting with strings and plus signs, but because of that all of my code was on one line and went off the screen of the OLED. To fix this I created an f string which I printed to my OLED display. I used "\n" to put my value on new lines, and seperated my values using "mpu.gyro[x]", x being either 0, 1, or 2. I also had to learn how to round the values by surrounding my values with parenthesis, on the left side of my values I wrote "round" and on the right side I put a comma and then the number of digits I'd like to round to. Once I added all of my newfound "f string" knowledge my value displayed wonderfully. (I can do whatever I can dream!)
+
+## FEA Beam Part 1
+
+### Assignment Description
+
+Create a beam that can hold as much weight as possible while still following all of the assignments constraints.
+
+### Part Link 
+
+[Link To Beam](https://cvilleschools.onshape.com/documents/8bb0d31d162d28dc9f991ea0/w/fe1197780904e4d1d1386b24/e/ca967a76187dc0c5098b74f0?renderMode=0&uiState=651d663d66bcfe34cbaa2349).
+
+### Part Image
+
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/105ef470-8152-4ce7-ae7f-e3294ce4fd50)
+
+### Reflection
+
+The biggest struggle for this assignment was having a starting point and getting the weight down to 13 grams. When it came to how I got a starting point I don't really know. I did a bit of research into beam theory, but it didn't really help all that much. I ended up just drawing some lines without much thought. For having to get it down to 13g all I did was just make a bunch of holes. I used triangles because they fit the angle requirements for printing and just made a pattern I thought looked cool. I added triangle after triangle until I got down to the final weight of 12.89g.
 
 &nbsp;
 
