@@ -451,8 +451,8 @@ Render and analyze force and deflection plots of your beam and make changes to b
 
 ### Part Image
 
-![New Bridge](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/161e219d-e181-4518-88f7-1f0d520bb64e)
-![New Bridge (1)](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/b20202b8-0b8f-4f45-a519-8ade8877dd72)
+![BRIDGEEEEEEEEEE](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/91f8f0ac-801b-4d9d-8dff-486c955610ae)
+![BRIDGEEEEE](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/808c92dc-917c-4de0-8e53-6d5c24fb3e78)
 
 ### Reflection
 
