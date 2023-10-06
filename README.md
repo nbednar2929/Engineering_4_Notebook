@@ -452,7 +452,8 @@ Render and analyze force and deflection plots of your beam and think how to impr
 
 ### Part Image
 
-
+![old beam psi](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/d2153ce2-1e13-4d53-81cb-47b457737f58)
+![old beam displacement](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/79a6c5ea-4d05-41b5-95b8-409da07e9aa4)
 
 ### Reflection
 
