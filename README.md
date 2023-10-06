@@ -11,6 +11,7 @@
 * [Crash Avoidance Part 2](#crash-avoidance-part-2)
 * [Crash Avoidance Part 3](#crash-avoidance-part-3)
 * [FEA Beam Part 1](#FEA-Beam-Part-1)
+* [FEA Beam Part 2](#FEA-Beam-Part-2)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -437,6 +438,24 @@ Create a beam that can hold as much weight as possible while still following all
 ### Reflection
 
 The biggest struggle for this assignment was having a starting point and getting the weight down to 13 grams. When it came to how I got a starting point I don't really know. I did a bit of research into beam theory, but it didn't really help all that much. I ended up just drawing some lines without much thought. For having to get it down to 13g all I did was just make a bunch of holes. I used triangles because they fit the angle requirements for printing and just made a pattern I thought looked cool. I added triangle after triangle until I got down to the final weight of 12.89g.
+
+## Onshape_Assignment_Template
+
+### Assignment Description
+
+Render and analyze force and deflection plots of your beam and make changes to better the beam's structural integrity.
+
+### Part Link 
+
+[Link To Part](https://cvilleschools.onshape.com/documents/8bb0d31d162d28dc9f991ea0/w/fe1197780904e4d1d1386b24/e/3e53c58bec7aca61a13eb0a7?renderMode=0&uiState=651f6751e920cb089592164c).
+
+### Part Image
+
+![FEA Beam Image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/a7d8be5f-7409-4224-8166-d2fa5f2141fa)
+
+### Reflection
+
+Me and Afton made two seperate designs and after analyzing the force plots of each of our desgins we decided to choose Afton's to continute with. His design not only is much easier to print but it weighs less meaning we have more room to add onto his design if we see fit. The most fragile piece of Afton's beam is the edges right along the attachment block. Our idea to reinforce that area is to add more supports that continue down the shaft of the beam.
 
 &nbsp;
 
