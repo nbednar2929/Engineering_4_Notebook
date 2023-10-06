@@ -439,7 +439,7 @@ Create a beam that can hold as much weight as possible while still following all
 
 The biggest struggle for this assignment was having a starting point and getting the weight down to 13 grams. When it came to how I got a starting point I don't really know. I did a bit of research into beam theory, but it didn't really help all that much. I ended up just drawing some lines without much thought. For having to get it down to 13g all I did was just make a bunch of holes. I used triangles because they fit the angle requirements for printing and just made a pattern I thought looked cool. I added triangle after triangle until I got down to the final weight of 12.89g.
 
-## Onshape_Assignment_Template
+## FEA Beam Part 2
 
 ### Assignment Description
 
