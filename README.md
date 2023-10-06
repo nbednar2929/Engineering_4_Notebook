@@ -451,7 +451,8 @@ Render and analyze force and deflection plots of your beam and make changes to b
 
 ### Part Image
 
-![FEA Beam Image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/a7d8be5f-7409-4224-8166-d2fa5f2141fa)
+![New Bridge](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/161e219d-e181-4518-88f7-1f0d520bb64e)
+![New Bridge (1)](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/b20202b8-0b8f-4f45-a519-8ade8877dd72)
 
 ### Reflection
 
