@@ -12,6 +12,7 @@
 * [Crash Avoidance Part 3](#crash-avoidance-part-3)
 * [FEA Beam Part 1](#FEA-Beam-Part-1)
 * [FEA Beam Part 2](#FEA-Beam-Part-2)
+* [FEA Beam Part 3](#FEA-Beam-Part-3)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -443,11 +444,29 @@ The biggest struggle for this assignment was having a starting point and getting
 
 ### Assignment Description
 
-Render and analyze force and deflection plots of your beam and make changes to better the beam's structural integrity.
+Render and analyze force and deflection plots of your beam and think how to improve your design.
 
 ### Part Link 
 
 [Link To Part](https://cvilleschools.onshape.com/documents/8bb0d31d162d28dc9f991ea0/w/fe1197780904e4d1d1386b24/e/3e53c58bec7aca61a13eb0a7?renderMode=0&uiState=651f6751e920cb089592164c).
+
+### Part Image
+
+
+
+### Reflection
+
+Me and Afton made two seperate designs and after analyzing the force plots of each of our desgins we decided to choose Afton's to continute with. His design not only is much easier to print but it weighs less meaning we have more room to add onto his design if we see fit. The most fragile piece of Afton's beam is the edges right along the attachment block. Our idea to reinforce that area is to add more supports that continue down the shaft of the beam.
+
+## FEA Beam Part 3
+
+### Assignment Description
+
+Make actual physical imporvments to your beam based on the plots you rendered.
+
+### Part Link 
+
+[Create a link to your Onshape document](https://cvilleschools.onshape.com/documents/8bb0d31d162d28dc9f991ea0/w/fe1197780904e4d1d1386b24/e/3e53c58bec7aca61a13eb0a7)
 
 ### Part Image
 
@@ -456,7 +475,8 @@ Render and analyze force and deflection plots of your beam and make changes to b
 
 ### Reflection
 
-Me and Afton made two seperate designs and after analyzing the force plots of each of our desgins we decided to choose Afton's to continute with. His design not only is much easier to print but it weighs less meaning we have more room to add onto his design if we see fit. The most fragile piece of Afton's beam is the edges right along the attachment block. Our idea to reinforce that area is to add more supports that continue down the shaft of the beam.
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+
 
 &nbsp;
 
