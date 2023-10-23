@@ -478,6 +478,69 @@ Make actual physical imporvments to your beam based on the plots you rendered.
 
 The original "lowercase i beam" design was relatively strong but it had quite a lot of stress along the top of the beam. To try and reduce this I added supports on the sides of the top circle to try and gold some of the weight. This worked well at lowering the top stress to manageable levels, but the pressure was now concentrated at the base of the beam. I changed the "shrink factor" which made the end of the beam smaller to reduce weight as the middle and end of the beam don't have to bear much load and therefore shouldn't weigh much. This allowed me the extra material to fillet the base of the beam, which drastically improved the pressure, though there are still "hotspots" that have high stress.
 
+## Landing Area Part 1
+
+### Assignment Description
+
+Write a script that takes three coordinates and returns the area using a function while also detecting errors in coordinate syntax.
+
+### Evidence 
+
+Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+
+### Wiring
+
+No wiring was needed for this assignment.
+
+### Code
+
+# Triangle Are Solver - Afton Van Hooser
+
+```python
+from time import sleep
+
+x = 0
+y = 1
+
+def area(r1,r2,r3):
+    c1 = [0,0]
+    c2 = [0,0]
+    c3 = [0,0]
+    try:                    # Coordinate 1
+        c1 = [int(o) for o in r1.split(",")] # Splits raw string: "1,2" into a string array: "1", "2", and turns each value into an int: 1,2
+    except:
+        print("Coordinate 1 Invalid, please enter in 'x,y' format")
+        pass
+    finally:
+
+        try:                # Coordinate 2
+            c2 = [int(o) for o in r2.split(",")]
+        except:
+            print("Coordinate 2 Invalid, please enter in 'x,y' format")
+            pass
+        finally:
+
+            try:            # Coordinate 3
+                c3 = [int(o) for o in r3.split(",")]
+            except:
+                print("Coordinate 3 Invalid, please enter in 'x,y' format")
+                pass
+            finally:
+                A = (1/2)*abs(c1[x]*(c2[y] - c3[y]) + c2[x]*(c3[y] - c1[y]) + c3[x]*(c1[y] - c2[y])) # Easy plug and play equation for a triangle's area
+                return A
+
+
+while True:
+    r1 = input("Coordinate 1: ")
+    r2 = input("Coordinate 2: ")
+    r3 = input("Coordinate 3: ")
+    print(area(r1,r2,r3))
+```
+
+### Reflection
+
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+
 &nbsp;
 
 # Templates
