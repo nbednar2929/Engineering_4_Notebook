@@ -495,8 +495,6 @@ No wiring was needed for this assignment.
 
 ### Code
 
-# Triangle Are Solver - Afton Van Hooser
-
 ```python
 from time import sleep
 
