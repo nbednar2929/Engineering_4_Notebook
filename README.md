@@ -10,6 +10,10 @@
 * [Crash Avoidance Part 1](#crash-avoidance-part-1)
 * [Crash Avoidance Part 2](#crash-avoidance-part-2)
 * [Crash Avoidance Part 3](#crash-avoidance-part-3)
+* [FEA Beam Part 1](#FEA-Beam-Part-1)
+* [FEA Beam Part 2](#FEA-Beam-Part-2)
+* [FEA Beam Part 3](#FEA-Beam-Part-3)
+* [Landing Area Part 1](#Landing-Area-Part-1)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -347,7 +351,7 @@ Add an onboard OLED screen to print live angular velocity values.
 
 ### Evidence 
 
-Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/9b9da6a6-fdb4-4143-b6ae-a5a5752a2791
 
 ### Wiring
 
@@ -418,6 +422,125 @@ while True:
 ### Reflection
 
 I had two main issues with this assignment. The first is that I originally didn't have the line "displayio.release_displays()" at the top of my code right below my imports. As a result my OLED display couldn't be idenitified and wouldn't print my angular velocity. To fix this all I did was move that line to right below my imports. The second issue I had was with my syntax when printing on the OLED display. I tried to use my usual priting with strings and plus signs, but because of that all of my code was on one line and went off the screen of the OLED. To fix this I created an f string which I printed to my OLED display. I used "\n" to put my value on new lines, and seperated my values using "mpu.gyro[x]", x being either 0, 1, or 2. I also had to learn how to round the values by surrounding my values with parenthesis, on the left side of my values I wrote "round" and on the right side I put a comma and then the number of digits I'd like to round to. Once I added all of my newfound "f string" knowledge my value displayed wonderfully. (I can do whatever I can dream!)
+
+## FEA Beam Part 1
+
+### Assignment Description
+
+Create a beam that can hold as much weight as possible while still following all of the assignments constraints.
+
+### Part Link 
+
+[Link To Beam](https://cvilleschools.onshape.com/documents/8bb0d31d162d28dc9f991ea0/w/fe1197780904e4d1d1386b24/e/ca967a76187dc0c5098b74f0?renderMode=0&uiState=651d663d66bcfe34cbaa2349).
+
+### Part Image
+
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/105ef470-8152-4ce7-ae7f-e3294ce4fd50)
+
+### Reflection
+
+The biggest struggle for this assignment was having a starting point and getting the weight down to 13 grams. When it came to how I got a starting point I don't really know. I did a bit of research into beam theory, but it didn't really help all that much. I ended up just drawing some lines without much thought. For having to get it down to 13g all I did was just make a bunch of holes. I used triangles because they fit the angle requirements for printing and just made a pattern I thought looked cool. I added triangle after triangle until I got down to the final weight of 12.89g.
+
+## FEA Beam Part 2
+
+### Assignment Description
+
+Render and analyze force and deflection plots of your beam and think how to improve your design.
+
+### Part Link 
+
+[Link To Part](https://cvilleschools.onshape.com/documents/8bb0d31d162d28dc9f991ea0/w/fe1197780904e4d1d1386b24/e/3e53c58bec7aca61a13eb0a7?renderMode=0&uiState=651f6751e920cb089592164c).
+
+### Part Image
+
+![old beam psi](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/d2153ce2-1e13-4d53-81cb-47b457737f58)
+![old beam displacement](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/79a6c5ea-4d05-41b5-95b8-409da07e9aa4)
+
+### Reflection
+
+Me and Afton made two seperate designs and after analyzing the force plots of each of our desgins we decided to choose Afton's to continute with. His design not only is much easier to print but it weighs less meaning we have more room to add onto his design if we see fit. The most fragile piece of Afton's beam is the edges right along the attachment block. Our idea to reinforce that area is to add more supports that continue down the shaft of the beam.
+
+## FEA Beam Part 3
+
+### Assignment Description
+
+Make actual physical imporvments to your beam based on the plots you rendered.
+
+### Part Link 
+
+[Link To Part](https://cvilleschools.onshape.com/documents/8bb0d31d162d28dc9f991ea0/w/fe1197780904e4d1d1386b24/e/3e53c58bec7aca61a13eb0a7)
+
+### Part Image
+
+![BRIDGEEEEEEEEEE](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/91f8f0ac-801b-4d9d-8dff-486c955610ae)
+![BRIDGEEEEE](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/808c92dc-917c-4de0-8e53-6d5c24fb3e78)
+
+### Reflection
+
+The original "lowercase i beam" design was relatively strong but it had quite a lot of stress along the top of the beam. To try and reduce this I added supports on the sides of the top circle to try and gold some of the weight. This worked well at lowering the top stress to manageable levels, but the pressure was now concentrated at the base of the beam. I changed the "shrink factor" which made the end of the beam smaller to reduce weight as the middle and end of the beam don't have to bear much load and therefore shouldn't weigh much. This allowed me the extra material to fillet the base of the beam, which drastically improved the pressure, though there are still "hotspots" that have high stress.
+
+## Landing Area Part 1
+
+### Assignment Description
+
+Write a script that takes three coordinates and returns the area using a function while also detecting errors in coordinate syntax.
+
+### Evidence 
+
+![landing area part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/a5589f58-ab1b-4690-b5b6-72951a54c752)
+
+### Wiring
+
+No wiring was needed for this assignment.
+
+### Code
+
+```python
+from time import sleep
+
+x = 0
+y = 1
+
+def area(r1,r2,r3):
+    c1 = [0,0]
+    c2 = [0,0]
+    c3 = [0,0]
+    try:                    # Coordinate 1
+        c1 = [int(o) for o in r1.split(",")] # Splits raw string: "1,2" into a string array: "1", "2", and turns each value into an int: 1,2
+    except:
+        print("Coordinate 1 Invalid, please enter in 'x,y' format")
+        pass
+    finally:
+
+        try:                # Coordinate 2
+            c2 = [int(o) for o in r2.split(",")]
+        except:
+            print("Coordinate 2 Invalid, please enter in 'x,y' format")
+            pass
+        finally:
+
+            try:            # Coordinate 3
+                c3 = [int(o) for o in r3.split(",")]
+            except:
+                print("Coordinate 3 Invalid, please enter in 'x,y' format")
+                pass
+            finally:
+                A = (1/2)*abs(c1[x]*(c2[y] - c3[y]) + c2[x]*(c3[y] - c1[y]) + c3[x]*(c1[y] - c2[y])) # Easy plug and play equation for a triangle's area
+                return A
+
+
+while True:
+    r1 = input("Coordinate 1: ")
+    r2 = input("Coordinate 2: ")
+    r3 = input("Coordinate 3: ")
+    print(area(r1,r2,r3))
+#credit to Afton Van Hooser
+
+```
+
+### Reflection
+
+This assignment was really difficult to me, mainly given the fact that I had a bunch of other work this week and this assignment just felt big and overwhelming. I ended up using Afton's code, but I've spent lots of time reading it so I at the least understand what it means. I've learned from this assignment to go to sleep earlier and to try to break down my assignment into smaller segments so they feel less overwhelming. If you'd like a better reflection of the actual coding aspects of it here's a link to Afton's repository: https://github.com/Avanhoo/Engineering_4_Notebook
 
 &nbsp;
 
