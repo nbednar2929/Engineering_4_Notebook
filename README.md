@@ -487,7 +487,7 @@ Write a script that takes three coordinates and returns the area using a functio
 
 ### Evidence 
 
-Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+![landing area part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/a5589f58-ab1b-4690-b5b6-72951a54c752)
 
 ### Wiring
 
@@ -534,11 +534,13 @@ while True:
     r2 = input("Coordinate 2: ")
     r3 = input("Coordinate 3: ")
     print(area(r1,r2,r3))
+#credit to Afton Van Hooser
+
 ```
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+This assignment was really difficult to me, mainly given the fact that I had a bunch of other work this week and this assignment just felt big and overwhelming. I ended up using Afton's code, but I've spent lots of time reading it so I at the least understand what it means. I've learned from this assignment to go to sleep earlier and to try to break down my assignment into smaller segments so they feel less overwhelming. If you'd like a better reflection of the actual coding aspects of it here's a link to Afton's repository: https://github.com/Avanhoo/Engineering_4_Notebook
 
 &nbsp;
 
