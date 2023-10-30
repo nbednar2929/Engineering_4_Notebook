@@ -15,17 +15,17 @@ x = 0
 y = 1
 
 displayio.release_displays() #splits SCL SDA displays
-sda_pin = board.GP14 #wiring up accelerometer
+sda_pin = board.GP14 #wiring pins
 scl_pin = board.GP15
-i2c = busio.I2C(scl_pin, sda_pin)
+i2c = busio.I2C(scl_pin, sda_pin) #identify display
 display_bus = displayio.I2CDisplay(i2c, device_address=0x3d, reset=board.GP13) #identifies monitor
 display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
 
-c1 = [0,0]
+c1 = [0,0] #creates coordinates 
 c2 = [0,0]
 c3 = [0,0]
 
-def area(r1,r2,r3):
+def area(r1,r2,r3): #area function
     global c1
     global c2
     global c3
@@ -52,21 +52,21 @@ def area(r1,r2,r3):
                 A = (1/2)*abs(c1[x]*(c2[y] - c3[y]) + c2[x]*(c3[y] - c1[y]) + c3[x]*(c1[y] - c2[y])) # Easy plug and play equation for a triangle's area
                 return A
     
-
+splash = displayio.Group() #displays and defines text
+xline = Line(64,0,64,64,color=0xFFFF00) #x and y lines
+yline = Line(0,32,128,32,color=0xFFFF00)
+circle = Circle(64,32,2,outline=0xFFFF00) #origin
+splash.append(xline)
+splash.append(yline)
+splash.append(circle)
+display.show(splash) #show display
 
 while True:
-    splash = displayio.Group() #displays and defines text
-    xline = Line(64,0,64,64,color=0xFFFF00)
-    yline = Line(0,32,128,32,color=0xFFFF00)
-    splash.append(xline)
-    splash.append(yline)
-    display.show(splash)
-
-    r1 = input("Coordinate 1: ")
+    r1 = input("Coordinate 1: ") #print coordinates
     r2 = input("Coordinate 2: ")
     r3 = input("Coordinate 3: ")
-    print("The Area of The Traingle With Vertices: (" + str(r1) + "), (" + str(r2) + "), (" + str(r3) + ") is " + str(area(r1,r2,r3)) + " Square KM.")
+    print("The Area of The Traingle With Vertices: (" + str(r1) + "), (" + str(r2) + "), (" + str(r3) + ") is " + str(area(r1,r2,r3)) + " Square KM.") #print area
 
-    triangle = Triangle(c1[x],c1[y],c2[x],c2[y],c3[x],c3[y],outline=0xFFFF00)
+    triangle = Triangle(c1[x]+64,c1[y]+32,c2[x]+64,c2[y]+32,c3[x]+64,c3[y]+32,outline=0xFFFF00)#display triangle
     splash.append(triangle)
     display.show(splash)
