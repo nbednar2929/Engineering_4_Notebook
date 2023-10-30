@@ -551,7 +551,7 @@ Print an triangle on your OLED display using inputted coordinates. Also calculat
 
 ### Evidence 
 
-Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+![Landing Area Part 2](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/6f6479e1-11f1-4ff6-a4c5-01fff520e6db)
 
 ### Wiring
 
