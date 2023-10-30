@@ -636,7 +636,7 @@ while True:
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+This assignment had a couple hiccups mainly on the code formatting side of things. The biggest fix for me was that my x and y axes were in my while loop, so when I input my traingle it would only show up for a split second before being erased and covered up by my axes. To fix this I took the lines of code about the axes out of the while loop and it fixed the issue. The other issue was needing to call c1, c2,and c3 outside of the area function. To fix this I got some help from Afton who told me that if I wrote "global" in front of them it would allow me to call them outside of the function. I also had to define them outside the function so making them global wouldn't cause an error.
 
 &nbsp;
 
