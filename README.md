@@ -14,6 +14,7 @@
 * [FEA Beam Part 2](#FEA-Beam-Part-2)
 * [FEA Beam Part 3](#FEA-Beam-Part-3)
 * [Landing Area Part 1](#Landing-Area-Part-1)
+* [Landing Area Part 2](#Landing-Area-Part-2)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -541,6 +542,101 @@ while True:
 ### Reflection
 
 This assignment was really difficult to me, mainly given the fact that I had a bunch of other work this week and this assignment just felt big and overwhelming. I ended up using Afton's code, but I've spent lots of time reading it so I at the least understand what it means. I've learned from this assignment to go to sleep earlier and to try to break down my assignment into smaller segments so they feel less overwhelming. If you'd like a better reflection of the actual coding aspects of it here's a link to Afton's repository: https://github.com/Avanhoo/Engineering_4_Notebook
+
+## Landing Area Part 2
+
+### Assignment Description
+
+Print an triangle on your OLED display using inputted coordinates. Also calculate and print the triangle's area on your terminal.
+
+### Evidence 
+
+![Landing Area Part 2](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/6f6479e1-11f1-4ff6-a4c5-01fff520e6db)
+
+### Wiring
+
+![landing area 2 ](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/cff2b737-2c9a-4d14-9bbe-5634ecfe1c8a)
+
+### Code
+
+```python
+#type: ignore
+#imports
+import time
+import board 
+from digitalio import DigitalInOut,Direction,Pull
+import busio
+from adafruit_display_text import label
+import adafruit_displayio_ssd1306
+import displayio
+from adafruit_display_shapes.triangle import Triangle
+from adafruit_display_shapes.line import Line
+from adafruit_display_shapes.circle import Circle
+
+x = 0
+y = 1
+
+displayio.release_displays() #splits SCL SDA displays
+sda_pin = board.GP14 #wiring pins
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin) #identify display
+display_bus = displayio.I2CDisplay(i2c, device_address=0x3d, reset=board.GP13) #identifies monitor
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+
+c1 = [0,0] #creates coordinates 
+c2 = [0,0]
+c3 = [0,0]
+
+def area(r1,r2,r3): #area function
+    global c1
+    global c2
+    global c3
+    try:                    # Coordinate 1
+        c1 = [int(o) for o in r1.split(",")] # Splits raw string: "1,2" into a string array: "1", "2", and turns each value into an int: 1,2
+    except:
+        print("Coordinate 1 Invalid, please enter in 'x,y' format")
+        pass
+    finally:
+
+        try:                # Coordinate 2
+            c2 = [int(o) for o in r2.split(",")]
+        except:
+            print("Coordinate 2 Invalid, please enter in 'x,y' format")
+            pass
+        finally:
+
+            try:            # Coordinate 3
+                c3 = [int(o) for o in r3.split(",")]
+            except:
+                print("Coordinate 3 Invalid, please enter in 'x,y' format")
+                pass
+            finally:
+                A = (1/2)*abs(c1[x]*(c2[y] - c3[y]) + c2[x]*(c3[y] - c1[y]) + c3[x]*(c1[y] - c2[y])) # Easy plug and play equation for a triangle's area
+                return A
+    
+splash = displayio.Group() #displays and defines text
+xline = Line(64,0,64,64,color=0xFFFF00) #x and y lines
+yline = Line(0,32,128,32,color=0xFFFF00)
+circle = Circle(64,32,2,outline=0xFFFF00) #origin
+splash.append(xline)
+splash.append(yline)
+splash.append(circle)
+display.show(splash) #show display
+
+while True:
+    r1 = input("Coordinate 1: ") #print coordinates
+    r2 = input("Coordinate 2: ")
+    r3 = input("Coordinate 3: ")
+    print("The Area of The Traingle With Vertices: (" + str(r1) + "), (" + str(r2) + "), (" + str(r3) + ") is " + str(area(r1,r2,r3)) + " Square KM.") #print area
+
+    triangle = Triangle(c1[x]+64,c1[y]+32,c2[x]+64,c2[y]+32,c3[x]+64,c3[y]+32,outline=0xFFFF00)#display triangle
+    splash.append(triangle)
+    display.show(splash)
+```
+
+### Reflection
+
+This assignment had a couple hiccups mainly on the code formatting side of things. The biggest fix for me was that my x and y axes were in my while loop, so when I input my traingle it would only show up for a split second before being erased and covered up by my axes. To fix this I took the lines of code about the axes out of the while loop and it fixed the issue. The other issue was needing to call c1, c2,and c3 outside of the area function. To fix this I got some help from Afton who told me that if I wrote "global" in front of them it would allow me to call them outside of the function. I also had to define them outside the function so making them global wouldn't cause an error.
 
 &nbsp;
 
