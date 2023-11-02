@@ -647,7 +647,7 @@ Translate inputted text into morse code in your terminal
 
 ### Evidence 
 
-![Landing Area Part 2](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/efb1e11f-32ef-4082-960e-cf2342c0e816)
+![morse code part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/40eb49e0-8587-456d-8559-5b95094eae56)
 
 ### Wiring
 
