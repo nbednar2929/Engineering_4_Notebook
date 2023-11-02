@@ -15,6 +15,7 @@
 * [FEA Beam Part 3](#FEA-Beam-Part-3)
 * [Landing Area Part 1](#Landing-Area-Part-1)
 * [Landing Area Part 2](#Landing-Area-Part-2)
+* [Morse Cdoe Part 1](#Morse-Code_Part-1)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -637,6 +638,65 @@ while True:
 ### Reflection
 
 This assignment had a couple hiccups mainly on the code formatting side of things. The biggest fix for me was that my x and y axes were in my while loop, so when I input my traingle it would only show up for a split second before being erased and covered up by my axes. To fix this I took the lines of code about the axes out of the while loop and it fixed the issue. The other issue was needing to call c1, c2,and c3 outside of the area function. To fix this I got some help from Afton who told me that if I wrote "global" in front of them it would allow me to call them outside of the function. I also had to define them outside the function so making them global wouldn't cause an error.
+
+## Morse Code Part 1
+
+### Assignment Description
+
+Translate inputted text into morse code in your terminal
+
+### Evidence 
+
+...
+
+### Wiring
+
+No wiring was required for this assignment.
+
+### Code
+
+```pyhton
+#type: ignore
+#imports
+import time 
+
+#morse code library
+MORSE_CODE = { 'A':'.-', 'B':'-...',
+    'C':'-.-.', 'D':'-..', 'E':'.',
+    'F':'..-.', 'G':'--.', 'H':'....',
+    'I':'..', 'J':'.---', 'K':'-.-',
+    'L':'.-..', 'M':'--', 'N':'-.',
+    'O':'---', 'P':'.--.', 'Q':'--.-',
+    'R':'.-.', 'S':'...', 'T':'-',
+    'U':'..-', 'V':'...-', 'W':'.--',
+    'X':'-..-', 'Y':'-.--', 'Z':'--..',
+    '1':'.----', '2':'..---', '3':'...--',
+    '4':'....-', '5':'.....', '6':'-....',
+    '7':'--...', '8':'---..', '9':'----.',
+    '0':'-----', ', ':'--..--', '.':'.-.-.-',
+    '?':'..--..', '/':'-..-.', '-':'-....-',
+    '(':'-.--.', ')':'-.--.-', ' ':'/'}
+
+while True: 
+    #lowercases letters
+    message = input("Your Message: ").upper()
+    #defins message
+    tmessage = ""
+    #exits code if "-q" is tpyed
+    if "-Q" in message:
+        break
+    #for loop with message
+    for letter in range(len(message)):
+        #converts letters to morse code
+        tmessage += MORSE_CODE[message[letter]] + " "
+    #prints message
+    print(f"Your Translation: {tmessage}")
+    time.sleep(1)
+``` 
+
+### Reflection
+
+...
 
 &nbsp;
 
