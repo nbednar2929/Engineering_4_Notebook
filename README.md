@@ -647,7 +647,7 @@ Translate inputted text into morse code in your terminal
 
 ### Evidence 
 
-...
+![Landing Area Part 2](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/efb1e11f-32ef-4082-960e-cf2342c0e816)
 
 ### Wiring
 
@@ -655,7 +655,7 @@ No wiring was required for this assignment.
 
 ### Code
 
-```pyhton
+```python
 #type: ignore
 #imports
 import time 
