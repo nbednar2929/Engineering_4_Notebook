@@ -696,7 +696,7 @@ while True:
 
 ### Reflection
 
-...
+My main issues with this assignment was that I don't have a lot of experience with coding formats when it comes to manipulating text. One issue I ran into was in line 31 I didn't include "range" which caused an error because the length variable wasn't told to split itself by individual integers. To fix that all I did was make sure to put range out front and add some paranthesis around it. 
 
 &nbsp;
 
