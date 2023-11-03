@@ -19,6 +19,13 @@ MORSE_CODE = { 'A':'.-', 'B':'-...',
     '?':'..--..', '/':'-..-.', '-':'-....-',
     '(':'-.--.', ')':'-.--.-', ' ':'/'}
 
+modifier = 0.25
+dot_time = 1*modifier
+dash_time = 3*modifier
+between_taps = 1*modifier
+between_letters = 3*modifier
+between_words = 7*modifier
+
 while True: 
     #lowercases letters
     message = input("Your Message: ").upper()
@@ -31,6 +38,8 @@ while True:
     for letter in range(len(message)):
         #converts letters to morse code
         tmessage += MORSE_CODE[message[letter]] + " "
+    for character in morse_message:
+        
     #prints message
     print(f"Your Translation: {tmessage}")
     time.sleep(1)
