@@ -1,6 +1,10 @@
 #type: ignore
 #imports
 import time 
+import board 
+import digitalio 
+import pwmio
+from digitalio import DigitalInOut,Direction,Pull
 
 #morse code library
 MORSE_CODE = { 'A':'.-', 'B':'-...',
@@ -22,9 +26,11 @@ MORSE_CODE = { 'A':'.-', 'B':'-...',
 modifier = 0.25
 dot_time = 1*modifier
 dash_time = 3*modifier
-between_taps = 1*modifier
 between_letters = 3*modifier
 between_words = 7*modifier
+
+led = digitalio.DigitalInOut(board.GP0) #initialize green led 
+led.direction = digitalio.Direction.OUTPUT
 
 while True: 
     #lowercases letters
@@ -39,7 +45,22 @@ while True:
         #converts letters to morse code
         tmessage += MORSE_CODE[message[letter]] + " "
     for character in morse_message:
-        
+        if character == ".":
+            led.value = True
+            time.sleep(dot_time)
+            led.value = False
+        if character == "-":
+            led.value = True
+            time.sleep(dash_time)
+            led.value = False
+        if character == " ":
+            led.value = True
+            time.sleep(between_letters)
+            led.value = False
+        if character == "/":    
+            led.value = True
+            time.sleep(between_words)
+            led.value = False
     #prints message
     print(f"Your Translation: {tmessage}")
     time.sleep(1)
