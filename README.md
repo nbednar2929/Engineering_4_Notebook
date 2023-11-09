@@ -16,6 +16,7 @@
 * [Landing Area Part 1](#Landing-Area-Part-1)
 * [Landing Area Part 2](#Landing-Area-Part-2)
 * [Morse Code Part 1](#Morse-Code-Part-1)
+* [Morse Code Part 2](#Morse-Code-Part-2)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -556,7 +557,14 @@ Print an triangle on your OLED display using inputted coordinates. Also calculat
 
 ### Wiring
 
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>   
 ![landing area 2 ](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/cff2b737-2c9a-4d14-9bbe-5634ecfe1c8a)
+</p>
+
+</details>
 
 ### Code
 
@@ -697,6 +705,103 @@ while True:
 ### Reflection
 
 My main issues with this assignment was that I don't have a lot of experience with coding formats when it comes to manipulating text. One issue I ran into was in line 31 I didn't include "range" which caused an error because the length variable wasn't told to split itself by individual integers. To fix that all I did was make sure to put range out front and add some paranthesis around it. 
+
+## Morse Code Part 2
+
+### Assignment Description
+
+Write a script that translates messages into morse code onto an LED.
+
+### Evidence 
+
+![morse code part 2](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/b002d6fc-a607-4f67-98fd-6f237b4faa50)
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>   
+![morse code 2 wiring](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/098a8463-931a-4979-abb2-a72b3cce1fcc)
+</p>
+
+</details>
+
+### Code
+
+ ```python
+#type: ignore
+#imports
+import time 
+import board 
+import digitalio 
+import pwmio
+from digitalio import DigitalInOut,Direction,Pull
+
+#morse code library
+MORSE_CODE = { 'A':'.-', 'B':'-...',
+    'C':'-.-.', 'D':'-..', 'E':'.',
+    'F':'..-.', 'G':'--.', 'H':'....',
+    'I':'..', 'J':'.---', 'K':'-.-',
+    'L':'.-..', 'M':'--', 'N':'-.',
+    'O':'---', 'P':'.--.', 'Q':'--.-',
+    'R':'.-.', 'S':'...', 'T':'-',
+    'U':'..-', 'V':'...-', 'W':'.--',
+    'X':'-..-', 'Y':'-.--', 'Z':'--..',
+    '1':'.----', '2':'..---', '3':'...--',
+    '4':'....-', '5':'.....', '6':'-....',
+    '7':'--...', '8':'---..', '9':'a----.',
+    '0':'-----', ', ':'--..--', '.':'.-.-.-',
+    '?':'..--..', '/':'-..-.', '-':'-....-',
+    '(':'-.--.', ')':'-.--.-', ' ':'/'}
+
+modifier = 0.25
+dot_time = 1*modifier
+dash_time = 3*modifier
+between_taps = 1*modifier
+between_letters = 3*modifier
+between_words = 7*modifier
+
+led = digitalio.DigitalInOut(board.GP0) #initialize green led 
+led.direction = digitalio.Direction.OUTPUT
+
+while True: 
+    #lowercases letters
+    message = input("Your Message: ").upper()
+    #defins message
+    tmessage = ""
+    #exits code if "-q" is tpyed
+    if "-Q" in message:
+        break
+    #for loop with message
+    for letter in range(len(message)):
+        #converts letters to morse code
+        tmessage += MORSE_CODE[message[letter]] + " "
+    for character in tmessage:
+        if character == ".":
+            led.value = True
+            time.sleep(dot_time)
+            led.value = False
+            time.sleep(between_taps)
+        if character == "-":
+            led.value = True
+            time.sleep(dash_time)
+            led.value = False
+            time.sleep(between_taps)
+        if character == " ":
+            time.sleep(between_letters)
+            led.value = False
+        if character == "/":    
+            time.sleep(between_words)
+            led.value = False
+    #prints message
+    print(f"Your Translation: {tmessage}")
+    time.sleep(1)
+```
+
+### Reflection
+
+My only issue with this assignment was some logic stuff in my "for character" loop. I originally would turn on the led for every single dot, dash, slash, or space. As a result the led would never turn off. So first I made sure to turn off the led after sleeping for the provided times. Even still, the led would never turn off. I realized that for the spaces or slashes I needed to not turn the led on at all and instead only sleep after turning th led off. The final bit was that my led wouldn't turn off after dots or dashes still because I didn't sleep after turning the led off. To fix this I added a time.sleep(between_taps) after turning the led off for dots and dashes and the translation works properly now.
 
 &nbsp;
 
