@@ -716,7 +716,7 @@ Write a script that translates messages into morse code onto an LED.
 
 ### Evidence 
 
-Pictures / Gifs of your work should go here. You need to communicate what your thing does. 
+![morse code 2 wiring](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/0c10f757-ecc5-46a3-80c0-0b7363546b2e)
 
 ### Wiring
 
@@ -805,7 +805,7 @@ while True:
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+My only issue with this assignment was some logic stuff in my "for character" loop. I originally would turn on the led for every single dot, dash, slash, or space. As a result the led would never turn off. So first I made sure to turn off the led after sleeping for the provided times. Even still, the led would never turn off. I realized that for the spaces or slashes I needed to not turn the led on at all and instead only sleep after turning th led off. The final bit was that my led wouldn't turn off after dots or dashes still because I didn't sleep after turning the led off. To fix this I added a time.sleep(between_taps) after turning the led off for dots and dashes and the translation works properly now.
 
 &nbsp;
 
