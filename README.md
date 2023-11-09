@@ -560,10 +560,8 @@ Print an triangle on your OLED display using inputted coordinates. Also calculat
 <details>
 <summary><b>Wiring Diagram</b></summary>
 
-<p>
-    
+<p>   
 ![landing area 2 ](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/cff2b737-2c9a-4d14-9bbe-5634ecfe1c8a)
-
 </p>
 
 </details>
@@ -723,10 +721,8 @@ Write a script that translates messages into morse code onto an LED.
 <details>
 <summary><b>Wiring Diagram</b></summary>
 
-<p>
-    
+<p>   
 ![morse code 2 wiring](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/098a8463-931a-4979-abb2-a72b3cce1fcc)
-
 </p>
 
 </details>
