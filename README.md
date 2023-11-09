@@ -714,7 +714,7 @@ Write a script that translates messages into morse code onto an LED.
 
 ### Evidence 
 
-![morse code 2 wiring](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/0c10f757-ecc5-46a3-80c0-0b7363546b2e)
+![morse code part 2](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/b002d6fc-a607-4f67-98fd-6f237b4faa50)
 
 ### Wiring
 
