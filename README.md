@@ -557,7 +557,16 @@ Print an triangle on your OLED display using inputted coordinates. Also calculat
 
 ### Wiring
 
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
 ![landing area 2 ](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/cff2b737-2c9a-4d14-9bbe-5634ecfe1c8a)
+
+</p>
+
+</details>
 
 ### Code
 
@@ -711,7 +720,16 @@ Pictures / Gifs of your work should go here. You need to communicate what your t
 
 ### Wiring
 
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>
+    
 ![morse code 2 wiring](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/098a8463-931a-4979-abb2-a72b3cce1fcc)
+
+</p>
+
+</details>
 
 ### Code
 
