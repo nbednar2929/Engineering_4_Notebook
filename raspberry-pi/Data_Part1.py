@@ -16,17 +16,23 @@ scl_pin = board.GP15
 i2c = busio.I2C(scl_pin, sda_pin)
 mpu = adafruit_mpu6050.MPU6050(i2c) #initializing MPU
 
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
+tilt = 0 
+
 with open("/data.csv", "a") as datalog:
     #printing acceleration values
+    led.value = True
+    time.sleep(0.1)
+    led.value = False
     while True: 
-        print("X Acceleration: " + (str(mpu.acceleration[0])))
-        print("Y Acceleration: " + (str(mpu.acceleration[1])))
-        print("Z Acceleration: " + (str(mpu.acceleration[2])))    
-        print("Rotation: " + (str(mpu.gyro)))
-        print("")
-        time.sleep(1)
+        datalog.write(f"{time.monotonic()},{mpu.acceleration[0]},{mpu.acceleration[2]},{mpu.acceleration[2]},{tilt}\n")
+        datalog.flush()
+        time.sleep(.9)
         if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9: #if gravity affects tilt 
             Green.value = True #led on
+            tilt = 1
         elif mpu.acceleration[0] <= -9 or mpu.acceleration[1] <= -9: #if gravity tilt other way
-                Green.value = True
+            Green.value = True
+            tilt = 0
         else: Green.value = False #else led false
