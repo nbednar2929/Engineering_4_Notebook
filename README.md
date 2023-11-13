@@ -1,4 +1,4 @@
-# Engineering_4_Notebook
+[Data Storage.csv](https://github.com/nbednar2929/Engineering_4_Notebook/files/13336374/Data.Storage.csv)# Engineering_4_Notebook
 
 &nbsp;
 
@@ -17,6 +17,7 @@
 * [Landing Area Part 2](#Landing-Area-Part-2)
 * [Morse Code Part 1](#Morse-Code-Part-1)
 * [Morse Code Part 2](#Morse-Code-Part-2)
+* [Data Storage](#Data-Storage)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -802,6 +803,104 @@ while True:
 ### Reflection
 
 My only issue with this assignment was some logic stuff in my "for character" loop. I originally would turn on the led for every single dot, dash, slash, or space. As a result the led would never turn off. So first I made sure to turn off the led after sleeping for the provided times. Even still, the led would never turn off. I realized that for the spaces or slashes I needed to not turn the led on at all and instead only sleep after turning th led off. The final bit was that my led wouldn't turn off after dots or dashes still because I didn't sleep after turning the led off. To fix this I added a time.sleep(between_taps) after turning the led off for dots and dashes and the translation works properly now.
+
+## Data Storage
+
+### Assignment Description
+
+Write code that puts your code into "code mode" and "data mode" which can read and write code to your pico while it's in "headless" mode.
+
+### Evidence 
+
+![ezgif com-optimize (3)](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/4534377f-86c3-4af5-8c6c-b8f4e03ea986)
+
+### Wiring
+
+<details>
+<summary><b>Wiring Diagram</b></summary>
+
+<p>   
+![data (storage) part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/da0c9c99-1d67-478e-adc0-c82f9c41436d)
+</p>
+
+</details>
+
+### Code
+
+```python
+#type: ignore
+#imports
+import time
+import board 
+import digitalio 
+import pwmio
+from digitalio import DigitalInOut,Direction,Pull
+import adafruit_mpu6050
+import busio
+
+Green = digitalio.DigitalInOut(board.GP0) #initialize green led 
+Green.direction = digitalio.Direction.OUTPUT
+
+sda_pin = board.GP14 #wiring up accelerometer
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+mpu = adafruit_mpu6050.MPU6050(i2c) #initializing MPU
+
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
+tilt = 0 
+
+with open("/data.csv", "a") as datalog:
+    #printing acceleration values
+    led.value = True
+    time.sleep(0.1)
+    led.value = False
+    while True: 
+        datalog.write(f"{time.monotonic()},{mpu.acceleration[0]},{mpu.acceleration[2]},{mpu.acceleration[2]},{tilt}\n")
+        datalog.flush()
+        time.sleep(.9)
+        if mpu.acceleration[0] >= 9 or mpu.acceleration[1] >= 9: #if gravity affects tilt 
+            Green.value = True #led on
+            tilt = 1
+        elif mpu.acceleration[0] <= -9 or mpu.acceleration[1] <= -9: #if gravity tilt other way
+            Green.value = True
+            tilt = 0
+        else: Green.value = False #else led false
+```
+
+### Data
+
+[Uploading7.609,0.869095,9.09079,9.08121,0
+8.725,0.785298,8.74602,8.63589,0
+9.744,0.823606,-0.169988,-0.198719,0
+10.764,0.3304,6.06691,5.82509,0
+11.783,-5.3702,7.47709,7.2688,0
+12.8,-8.63828,-3.98635,-4.05338,0
+13.822,-8.82981,-4.05817,-4.0462,0
+14.842,-7.43639,-7.38132,-7.13233,0
+15.859,-8.90882,-0.23942,0.00718261,0
+16.873,1.15879,-0.248997,-0.126893,1
+17.888,1.13006,1.1133,1.86508,1
+18.895,11.9375,-5.26245,-5.63595,1
+19.913,-18.5551,-0.0574608,0.215478,0
+20.929,-4.29999,-10.8936,-10.3932,0
+21.945,-0.605733,8.94713,8.92798,0
+23.051,0.754174,7.82425,7.95593,0
+24.071,-4.00071,8.4228,8.31267,0
+25.091,-2.22182,8.71011,8.52336,0
+26.114,0.826,8.67898,8.75799,0
+27.132,-9.15782,-2.12366,-2.229,0
+28.153,-3.58173,8.97826,8.83939,0
+29.175,0.921768,8.95671,9.11473,0
+30.199,0.972046,9.09557,9.10754,0
+31.218,0.931345,9.05966,9.07881,0
+32.239,0.938527,8.99741,8.97586,0
+33.258,0.909797,9.12191,9.11951,0
+ Data Storage.csv…]()
+
+### Reflection
+
+This assignment was really tough for me for a couple reasons. First, I highly suggest reading the assignment with actual intent and not just skimming it. Second make sure your "while True" loop is in the "with open("/data.csv", "a") as datalog:" loop. I didn't do this at first and as a result the data file was never created. Third, make sure your boot.py code is in its own file rather than within your code for this assignment. Fourth and most importantly make sure when you go into headless mode that you don't have both your pico plugged in and a battery plugged in, or else your pico will be wiped.
 
 &nbsp;
 
