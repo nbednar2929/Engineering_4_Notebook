@@ -820,7 +820,7 @@ Write code that puts your code into "code mode" and "data mode" which can read a
 <summary><b>Wiring Diagram</b></summary>
 
 <p>   
-![data (storage) part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/da0c9c99-1d67-478e-adc0-c82f9c41436d)
+![data storage part 1](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/da0c9c99-1d67-478e-adc0-c82f9c41436d)
 </p>
 
 </details>
