@@ -930,7 +930,7 @@ No code was required for this assignment.
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+Hee hoo! Boy o' boy I love a good graph! Yippie! If you are looking to find some helpful advice on this assignment... Look somewhere else! This graph reminds of me of my youth, the good ol' days, before all these damn youngin libs took over. God bless America and come on down to buy a new Chevrolet at the giant American flag with Charlie Oball Chevrolet in beautiful Stanton!
 
 &nbsp;
 
