@@ -18,6 +18,7 @@
 * [Morse Code Part 1](#Morse-Code-Part-1)
 * [Morse Code Part 2](#Morse-Code-Part-2)
 * [Data Storage](#Data-Storage)
+* [Data Analysis](#Data-Analysis)
 * [Raspberry Pi Assignment Template](#raspberry_pi_assignment_template)
 * [Onshape Assignment Template](#onshape_assignment_template)
 
@@ -904,6 +905,32 @@ with open("/data.csv", "a") as datalog:
 ### Reflection
 
 This assignment was really tough for me for a couple reasons. First, I highly suggest reading the assignment with actual intent and not just skimming it. Second make sure your "while True" loop is in the "with open("/data.csv", "a") as datalog:" loop. I didn't do this at first and as a result the data file was never created. Third, make sure your boot.py code is in its own file rather than within your code for this assignment. Fourth and most importantly make sure when you go into headless mode that you don't have both your pico plugged in and a battery plugged in, or else your pico will be wiped.
+
+## Data Analysis
+
+### Assignment Description
+
+Create graphs that relate to the data you collect with your pico in the prior assignment.
+
+### Evidence 
+
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/aff5fa7b-bbe7-40c1-926f-691e011bc289)
+
+![image](https://github.com/nbednar2929/Engineering_4_Notebook/assets/91289646/d7b57739-7eea-41a4-bafb-8f6ef51da839)
+
+[Link To Google Sheet](https://docs.google.com/spreadsheets/d/1_eP50iDxWyoMo7slHolbNCl_w958yNgELhV2aNQn0vQ/edit#gid=0)
+
+### Wiring
+
+No wiring was required for this assignment.
+
+### Code
+
+No code was required for this assignment. 
+
+### Reflection
+
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
 
 &nbsp;
 
