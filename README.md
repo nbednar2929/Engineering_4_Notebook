@@ -501,6 +501,7 @@ No wiring was needed for this assignment.
 ### Code
 
 ```python
+I used large portions of Afton's work in this assignment. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook
 from time import sleep
 
 x = 0
@@ -545,7 +546,7 @@ while True:
 
 ### Reflection
 
-This assignment was really difficult to me, mainly given the fact that I had a bunch of other work this week and this assignment just felt big and overwhelming. I ended up using Afton's code, but I've spent lots of time reading it so I at the least understand what it means. I've learned from this assignment to go to sleep earlier and to try to break down my assignment into smaller segments so they feel less overwhelming. If you'd like a better reflection of the actual coding aspects of it here's a link to Afton's repository: https://github.com/Avanhoo/Engineering_4_Notebook
+This assignment was really difficult to me, mainly given the fact that I had a bunch of other work this week and this assignment just felt big and overwhelming. I ended up using Afton's code, but I've spent lots of time reading it so I at the least understand what it means. I've learned from this assignment to go to sleep earlier and to try to break down my assignment into smaller segments so they feel less overwhelming. I used large portions of Afton's work in this assignment. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook
 
 ## Landing Area Part 2
 
@@ -571,6 +572,7 @@ Print an triangle on your OLED display using inputted coordinates. Also calculat
 ### Code
 
 ```python
+I used large portions of Afton's work in this assignment. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook
 #type: ignore
 #imports
 import time
@@ -647,7 +649,7 @@ while True:
 
 ### Reflection
 
-This assignment had a couple hiccups mainly on the code formatting side of things. The biggest fix for me was that my x and y axes were in my while loop, so when I input my traingle it would only show up for a split second before being erased and covered up by my axes. To fix this I took the lines of code about the axes out of the while loop and it fixed the issue. The other issue was needing to call c1, c2,and c3 outside of the area function. To fix this I got some help from Afton who told me that if I wrote "global" in front of them it would allow me to call them outside of the function. I also had to define them outside the function so making them global wouldn't cause an error. This is a continuation from the previous assignment which I took a very large portion from Afton's code:  https://github.com/Avanhoo/Engineering_4_Notebook.
+This assignment had a couple hiccups mainly on the code formatting side of things. The biggest fix for me was that my x and y axes were in my while loop, so when I input my traingle it would only show up for a split second before being erased and covered up by my axes. To fix this I took the lines of code about the axes out of the while loop and it fixed the issue. The other issue was needing to call c1, c2,and c3 outside of the area function. To fix this I got some help from Afton who told me that if I wrote "global" in front of them it would allow me to call them outside of the function. I also had to define them outside the function so making them global wouldn't cause an error. This is a continuation from the previous assignment which I used large portions of Afton's code. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook.
 
 ## Morse Code Part 1
 
@@ -666,6 +668,7 @@ No wiring was required for this assignment.
 ### Code
 
 ```python
+I used large portions of Afton's work in this assignment. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook
 #type: ignore
 #imports
 import time 
@@ -706,7 +709,7 @@ while True:
 
 ### Reflection
 
-My main issues with this assignment was that I don't have a lot of experience with coding formats when it comes to manipulating text. One issue I ran into was in line 31 I didn't include "range" which caused an error because the length variable wasn't told to split itself by individual integers. To fix that all I did was make sure to put range out front and add some paranthesis around it. Although I chnaged a few of the variable names I used a lot of Afton's code:  https://github.com/Avanhoo/Engineering_4_Notebook.
+My main issues with this assignment was that I don't have a lot of experience with coding formats when it comes to manipulating text. One issue I ran into was in line 31 I didn't include "range" which caused an error because the length variable wasn't told to split itself by individual integers. To fix that all I did was make sure to put range out front and add some paranthesis around it. I changed a few variable names but I used large portions of Afton's work in this assignment. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook
 
 ## Morse Code Part 2
 
@@ -732,6 +735,7 @@ Write a script that translates messages into morse code onto an LED.
 ### Code
 
  ```python
+I used large portions of Afton's work in this assignment. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook
 #type: ignore
 #imports
 import time 
@@ -803,7 +807,7 @@ while True:
 
 ### Reflection
 
-My only issue with this assignment was some logic stuff in my "for character" loop. I originally would turn on the led for every single dot, dash, slash, or space. As a result the led would never turn off. So first I made sure to turn off the led after sleeping for the provided times. Even still, the led would never turn off. I realized that for the spaces or slashes I needed to not turn the led on at all and instead only sleep after turning th led off. The final bit was that my led wouldn't turn off after dots or dashes still because I didn't sleep after turning the led off. To fix this I added a time.sleep(between_taps) after turning the led off for dots and dashes and the translation works properly now. This is a continuation from the previous assignment which means the top of my code was from Afton: https://github.com/Avanhoo/Engineering_4_Notebook.
+My only issue with this assignment was some logic stuff in my "for character" loop. I originally would turn on the led for every single dot, dash, slash, or space. As a result the led would never turn off. So first I made sure to turn off the led after sleeping for the provided times. Even still, the led would never turn off. I realized that for the spaces or slashes I needed to not turn the led on at all and instead only sleep after turning th led off. The final bit was that my led wouldn't turn off after dots or dashes still because I didn't sleep after turning the led off. To fix this I added a time.sleep(between_taps) after turning the led off for dots and dashes and the translation works properly now. This is a continuation from the previous assignment which means I used large portions of Afton's work in this assignment. Here is a link to their notebook: https://github.com/Avanhoo/Engineering_4_Notebook
 
 ## Data Storage
 
